@@ -1,4 +1,5 @@
-﻿using Terraria.ID;
+﻿using System.Diagnostics;
+using Terraria.ID;
 namespace Terraria;
 /// <summary>游戏主类</summary>
 public class Main
@@ -56,4 +57,12 @@ public class Main
     /// 是霜月
     /// </summary>
     public static bool snowMoon;
+    /// <summary>
+    /// 世界上的更新
+    /// </summary>
+    /// <exception cref="System.NullReferenceException"></exception>
+    public void DoUpdateInWorld(Stopwatch sw)
+    {
+        throw null;
+    }
 }

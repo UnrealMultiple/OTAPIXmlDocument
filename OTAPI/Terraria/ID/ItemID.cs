@@ -10912,4 +10912,8 @@ public class ItemID
     public const short DontHurtNatureBookInactive = 5454;
     /// <summary>和平共处指南（停用）</summary>
     public const short DontHurtComboBookInactive = 5455;
+    /// <summary>
+    /// 数量
+    /// </summary>
+    public static readonly short Count = 5456;
 }

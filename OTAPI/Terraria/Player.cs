@@ -40,8 +40,117 @@ public class Player : Entity, IFixLoadedData
     /// 增益ID <see cref="BuffID"/>
     /// </summary>
     public int[] buffType = new int[maxBuffs];
+    /// <summary>
+    /// 虚空袋 <see cref="ItemID.VoidLens"/>
+    /// </summary>
+    public Chest bank4;
+    /// <summary>
+    /// 背包
+    /// </summary>
+    public Item[] inventory;
     /// <inheritdoc cref="IFixLoadedData.FixLoadedData"/>
     public void FixLoadedData()
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 计算buff数量
+    /// </summary>
+    /// <returns></returns>
+    public int CountBuffs()
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 计算<see cref="inventory"/>内的指定物品数量
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="stopCountingAt">最小数量(超过就return)</param>
+    /// <returns></returns>
+    public int CountItem(int type, int stopCountingAt = 0)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 在<see cref="inventory"/>查找物品索引，找不到返回-1
+    /// </summary>
+    /// <param name="netid"></param>
+    /// <returns></returns>
+    public int FindItem(int netid)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 在<see cref="inventory"/>查找任一物品索引，找不到返回-1
+    /// </summary>
+    /// <param name="netids"></param>
+    /// <returns></returns>
+    public int FindItem(List<int> netids)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 在<see cref="inventory"/>查找任一物品索引，类似<see cref="FindItem(List{int})"/>，不过传的是 <see langword="bool"/>[<see cref="ItemID.Count"/>]
+    /// </summary>
+    /// <param name="validtypes"></param>
+    /// <returns></returns>
+    public int FindItem(bool[] validtypes)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 有指定物品在<see cref="inventory"/>
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    public bool HasItem(int type)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 在<paramref name="collection"/>内有指定物品
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="collection"></param>
+    /// <returns></returns>
+    public bool HasItem(int type, Item[] collection)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 有指定物品(查找全部个人存储和装备染料等)
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    public bool HasItemInAnyInventory(int type)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 有虚空袋(打开)
+    /// </summary>
+    /// <returns></returns>
+    public bool useVoidBag()
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 在背包和虚空袋内查找物品索引
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="inVoidBag">在虚空袋</param>
+    /// <returns>找到的索引，找不到返回-1，如何<paramref name="inVoidBag"/>是<see langword="true"/>，那是<see cref="bank4"/>内的索引</returns>
+    public int FindItemInInventoryOrOpenVoidBag(int type, out bool inVoidBag)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 有指定<paramref name="type"/>的npc在附近，受制于<see cref="NPC.npcsFoundForCheckActive"/>
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="range">搜范围，-1时为<see cref="NPC.sWidth"/></param>
+    /// <returns></returns>
+    public bool isNearNPC(int type, float range = -1f)
     {
         throw null;
     }

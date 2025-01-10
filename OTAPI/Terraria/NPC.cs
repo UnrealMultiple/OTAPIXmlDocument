@@ -42,6 +42,10 @@ public class NPC : Entity
     /// 增益ID <see cref="BuffID"/>
     /// </summary>
     public int[] buffType = new int[maxBuffs];
+    /// <summary>
+    /// ai类型
+    /// </summary>
+    public int aiStyle;
     /// <summary>已击败 <inheritdoc cref="NPCID.EyeofCthulhu"/></summary>
     public static bool downedBoss1;
     /// <summary>已击败 腐化Boss <inheritdoc cref="NPCID.EaterofWorldsHead"/> 或 <inheritdoc cref="NPCID.BrainofCthulhu"/></summary>
@@ -110,11 +114,58 @@ public class NPC : Entity
         get => throw null;
     }
     /// <summary>
+    /// 屏幕宽度，默认1920
+    /// </summary>
+    public static int sWidth = 1920;
+
+    /// <summary>
+    /// 指定id是有活动的npc，被一些自带方法使用
+    /// <list type="bullet">
+    /// <item><see cref="Player.isNearNPC(int, float)"/></item>
+    /// </list>
+    /// </summary>
+    public static bool[] npcsFoundForCheckActive;
+    /// <summary>
+    /// 把<see cref="npcsFoundForCheckActive"/>全设为<see langword="false"/>, 由<see cref="Main.DoUpdateInWorld(System.Diagnostics.Stopwatch)"/>调用
+    /// </summary>
+    public static void ClearFoundActiveNPCs()
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 更新<see cref="npcsFoundForCheckActive"/>, 由<see cref="Main.DoUpdateInWorld(System.Diagnostics.Stopwatch)"/>调用
+    /// </summary>
+    /// <exception cref="System.NullReferenceException"></exception>
+    public static void UpdateFoundActiveNPCs()
+    {
+        throw null;
+    }
+
+
+    /// <summary>
     /// 用来设置游戏事件清理
     /// </summary>
     /// <param name="eventFlag">修改的字段</param>
     /// <param name="gameEventId">事件ID <see cref="GameEventClearedID"/></param>
     public static void SetEventFlagCleared(ref bool eventFlag, int gameEventId)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 有指定<paramref name="Type"/>的活动npc
+    /// </summary>
+    /// <param name="Type"></param>
+    /// <returns></returns>
+    public static bool AnyNPCs(int Type)
+    {
+        throw null;
+    }
+    /// <summary>
+    /// 计算指定<paramref name="Type"/>的活动npc数量
+    /// </summary>
+    /// <param name="Type"></param>
+    /// <returns></returns>
+    public static int CountNPCS(int Type)
     {
         throw null;
     }

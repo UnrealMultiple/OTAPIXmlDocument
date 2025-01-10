@@ -6,7 +6,9 @@
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<RootNamespace></RootNamespace>
-		<NoWarn>$(NoWarn);CS8597</NoWarn>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<DocumentationFile>OTAPI.xml</DocumentationFile>
+		<NoWarn>$(NoWarn);CS8597;CS8618</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
