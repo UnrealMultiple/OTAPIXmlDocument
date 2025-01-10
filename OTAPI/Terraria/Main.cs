@@ -1,4 +1,5 @@
-﻿namespace Terraria;
+﻿using Terraria.ID;
+namespace Terraria;
 /// <summary>游戏主类</summary>
 public class Main
 {
@@ -33,4 +34,26 @@ public class Main
     public const int maxProjectiles = 1000;
     /// <summary>当前游戏中的射弹列表</summary>
     public static Projectile[] projectile = new Projectile[maxProjectiles + 1];
+    /// <summary>
+    /// 最大NPC数
+    /// </summary>
+    public const int maxNPCs = 200;
+    /// <summary>当前游戏中的NPC列表</summary>
+    public static NPC[] npc = new NPC[maxNPCs + 1];
+    /// <summary>
+    /// 入侵类型 <see cref="InvasionID"/>
+    /// </summary>
+    public static int invasionType;
+    /// <summary>
+    /// 是南瓜月
+    /// </summary>
+    public static bool pumpkinMoon;
+    /// <summary>
+    /// 是血月
+    /// </summary>
+    public static bool bloodMoon;
+    /// <summary>
+    /// 是霜月
+    /// </summary>
+    public static bool snowMoon;
 }

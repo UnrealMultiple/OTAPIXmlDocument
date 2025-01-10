@@ -4,6 +4,10 @@ namespace Terraria;
 /// <summary>NPC实体类</summary>
 public class NPC : Entity
 {
+    /// <summary>
+    /// ID <see cref="NPCID"/>
+    /// </summary>
+    public int type;
     /// <summary>NPC当前仇恨玩家在 <see cref="Main.player"/> 中的索引</summary>
     public int target;
     /// <summary>alpha 值，决定透明度</summary>
@@ -18,6 +22,26 @@ public class NPC : Entity
     public int damage;
     /// <summary>防御</summary>
     public int defense;
+    /// <summary>
+    /// 是boss
+    /// </summary>
+    public bool boss;
+    /// <summary>
+    /// 最大增益数量
+    /// </summary>
+    public static readonly int maxBuffs = 20;
+    /// <summary>
+    /// 免疫增益信息
+    /// </summary>
+    public bool[] buffImmune = new bool[BuffID.Count];
+    /// <summary>
+    /// 增益时间
+    /// </summary>
+    public int[] buffTime = new int[maxBuffs];
+    /// <summary>
+    /// 增益ID <see cref="BuffID"/>
+    /// </summary>
+    public int[] buffType = new int[maxBuffs];
     /// <summary>已击败 <inheritdoc cref="NPCID.EyeofCthulhu"/></summary>
     public static bool downedBoss1;
     /// <summary>已击败 腐化Boss <inheritdoc cref="NPCID.EaterofWorldsHead"/> 或 <inheritdoc cref="NPCID.BrainofCthulhu"/></summary>
@@ -84,5 +108,14 @@ public class NPC : Entity
     public static bool downedTowers
     {
         get => throw null;
+    }
+    /// <summary>
+    /// 用来设置游戏事件清理
+    /// </summary>
+    /// <param name="eventFlag">修改的字段</param>
+    /// <param name="gameEventId">事件ID <see cref="GameEventClearedID"/></param>
+    public static void SetEventFlagCleared(ref bool eventFlag, int gameEventId)
+    {
+        throw null;
     }
 }

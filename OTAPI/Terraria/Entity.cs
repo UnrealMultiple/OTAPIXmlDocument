@@ -5,6 +5,10 @@ namespace Terraria;
 /// <summary>实体基类</summary>
 public abstract class Entity
 {
+    /// <summary>
+    /// 是活动的
+    /// </summary>
+    public bool active;
     /// <summary>位置</summary>
     public Vector2 position;
     /// <summary>旧位置</summary>
