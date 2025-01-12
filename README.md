@@ -1,3 +1,12 @@
-自己下下来编译，把编译出来的xml文件丢到引用的OTAPI.dll所在的文件夹
+# OTAPIXmlDocument
 
-![ILspy](./img/inILspy.png "ILspy")
+## 璇存槑
+鏈粨搴撶敤浜庝负OTAPI娣诲姞涓枃Xml娉ㄩ噴锛屾晥鏋滃涓嬶細
+![image](https://github.com/user-attachments/assets/2e20ae9a-ddc6-47e1-ace3-9933a5a8cdc0)
+
+## 瀹夎
+1. 涓嬭浇瀹夎鑴氭湰,鍦ㄤ笅杞借剼鏈渶鏂板彂琛岀増 [Release](https://github.com/UnrealMultiple/OTAPIXmlDocument/releases/latest)  
+   ![image](https://github.com/user-attachments/assets/f960f3df-9c76-4563-bb88-5e84edd37b90)
+2. 杩愯鑴氭湰  
+   ![image](https://github.com/user-attachments/assets/03997492-7c6c-4b8f-ab84-1b04e3182aff)
+
