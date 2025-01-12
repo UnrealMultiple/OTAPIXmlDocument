@@ -35,6 +35,11 @@ public class Main
     public const int maxProjectiles = 1000;
     /// <summary>当前游戏中的射弹列表</summary>
     public static Projectile[] projectile = new Projectile[maxProjectiles + 1];
+    /// <summary>当前游戏中的箱子列表</summary>
+    public static Chest[] chest = new Chest[8000];
+    /// <summary>当前游戏中的标牌列表</summary>
+    public static Sign[] sign = new Sign[1000]; 
+    
     /// <summary>
     /// 最大NPC数
     /// </summary>
