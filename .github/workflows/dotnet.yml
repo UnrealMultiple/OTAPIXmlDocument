@@ -1,0 +1,72 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "master"]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+    
+    - name: Build
+      shell: bash
+      run: |
+        dotnet build OTAPIXmlDocument.sln -c Release
+        ota_content=$(cat OTAPI/OTAPI.xml)
+        ota_path=".nuget/packages/otapi.upcoming/3.1.20/lib/net6.0"
+        powershell_script=$(cat <<EOL
+        \$OTA = @"
+        $ota_content
+        "@
+        if (Test-Path -Path "\$env:USERPROFILE/$ota_path/OTAPI.dll") {
+            New-Item -Path "\$env:USERPROFILE/$ota_path" -Name "OTAPI.xml" -ItemType "file" -Force
+            Set-Content -Path "\$env:USERPROFILE/$ota_path/OTAPI.xml" -Value \$OTA
+            Write-Host "OTAPI.xml 文件已安装到: \$env:USERPROFILE/.nuget/packages/otapi.upcoming/3.1.20/lib/net6.0/OTAPI.xml。"
+        } else {
+            Write-Host "OTAPI.dll 文件不存在。"
+        }
+        Pause
+        EOL
+        )
+        echo "$powershell_script" > install.ps1
+        echo "PowerShell安装脚本已生成: install.ps1"
+
+           
+
+    - name: Set Release Tag
+      id: set_tag
+      run: echo "::set-output name=tag::v$(date +'%Y.%m.%d')"
+
+    - name: Update Tag
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      run: |
+        git tag -f ${{ steps.set_tag.outputs.tag }}
+        git push -f origin ${{ steps.set_tag.outputs.tag }}
+
+    - name: Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.set_tag.outputs.tag }}
+        name: OTAPIXmlDocument ${{ steps.set_tag.outputs.tag }}
+        body: |
+            # OTAPIXmlDocument Ciallo～(∠・ω< )⌒☆
+            ###  📅 使用Powershell打开脚本即可安装
+            ###  📖 默认路径为最新的OTAPI Nuget所在路径
+            ###  📦 Auto Build By Github Action
+        artifacts: |
+          ./OTAPI/OTAPI.xml
+          ./install.ps1
+          
+        allowUpdates: true
+        removeArtifacts: true
