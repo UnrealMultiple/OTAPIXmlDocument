@@ -41,13 +41,49 @@ public class Player : Entity, IFixLoadedData
     /// </summary>
     public int[] buffType = new int[maxBuffs];
     /// <summary>
-    /// 虚空袋 <see cref="ItemID.VoidLens"/>
+    /// 垃圾桶物品
+    /// </summary>
+    public Item trashItem;
+    /// <summary>
+    /// <inheritdoc cref="ItemID.PiggyBank"/>
+    /// </summary>
+    public Chest bank;
+    /// <summary>
+    /// <inheritdoc cref="ItemID.Safe"/>
+    /// </summary>
+    public Chest bank2;
+    /// <summary>
+    /// <inheritdoc cref="ItemID.DefendersForge"/>
+    /// </summary>
+    public Chest bank3;
+    /// <summary>
+    /// <inheritdoc cref="ItemID.VoidLens"/>
     /// </summary>
     public Chest bank4;
     /// <summary>
     /// 背包
     /// </summary>
     public Item[] inventory;
+    /// <summary>
+    /// 盔甲和时装
+    /// </summary>
+    public Item[] armor;
+    /// <summary>
+    /// <see cref="armor"/>的染料
+    /// </summary>
+    public Item[] dye;
+    /// <summary>
+    /// 杂项(宠物 照明宠物 矿车 坐骑 钩爪)
+    /// </summary>
+    public Item[] miscEquips;
+    /// <summary>
+    /// <see cref="miscEquips"/>的染料
+    /// </summary>
+    public Item[] miscDyes;
+    /// <summary>
+    /// 附近的城镇NPC数量(虽然加的是<see cref="NPC.npcSlots"/>, 但是都是1)
+    /// </summary>
+    public float townNPCs;
     /// <inheritdoc cref="IFixLoadedData.FixLoadedData"/>
     public void FixLoadedData()
     {

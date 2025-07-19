@@ -117,6 +117,10 @@ public class NPC : Entity
     /// 屏幕宽度，默认1920
     /// </summary>
     public static int sWidth = 1920;
+    /// <summary>
+    /// 所占槽位数量
+    /// </summary>
+    public float npcSlots = 1f;
 
     /// <summary>
     /// 指定id是有活动的npc，被一些自带方法使用

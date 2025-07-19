@@ -35,10 +35,12 @@ public class Main
     public const int maxProjectiles = 1000;
     /// <summary>当前游戏中的射弹列表</summary>
     public static Projectile[] projectile = new Projectile[maxProjectiles + 1];
+    /// <summary>最大箱子数量</summary>
+    public const int maxChests = 8000;
     /// <summary>当前游戏中的箱子列表</summary>
-    public static Chest[] chest = new Chest[8000];
+    public static Chest[] chest = new Chest[maxChests];
     /// <summary>当前游戏中的标牌列表</summary>
-    public static Sign[] sign = new Sign[1000]; 
+    public static Sign[] sign = new Sign[Sign.maxSigns]; 
     
     /// <summary>
     /// 最大NPC数
@@ -62,6 +64,14 @@ public class Main
     /// 是霜月
     /// </summary>
     public static bool snowMoon;
+    /// <summary>
+    /// 是装饰宠物<see cref="BuffID"/>
+    /// </summary>
+    public static bool[] vanityPet = new bool[BuffID.Count];
+    /// <summary>
+    /// 是照明宠物<see cref="BuffID"/>
+    /// </summary>
+    public static bool[] lightPet = new bool[BuffID.Count];
     /// <summary>
     /// 世界上的更新
     /// </summary>

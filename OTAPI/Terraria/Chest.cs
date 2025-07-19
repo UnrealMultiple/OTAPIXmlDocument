@@ -64,9 +64,9 @@ public class Chest : IFixLoadedData
     
     public Chest(bool bank = false)
     {
-        this.item = new Item[40];
-        this.bankChest = bank;
-        this.name = string.Empty;
+        item = new Item[maxItems];
+        bankChest = bank;
+        name = string.Empty;
     }
 
     /// <summary>
@@ -75,7 +75,7 @@ public class Chest : IFixLoadedData
     /// <returns> eg. {{X: 12, Y: 322, Count: 233}}</returns>
     public override string ToString()
     {
-        return null;
+        throw null;
     }
 
     /// <summary>
@@ -101,26 +101,25 @@ public class Chest : IFixLoadedData
     /// <returns> 已被打开的箱子在<see cref="Main.chest"/>的索引列表</returns>
     public static List<int> GetCurrentlyOpenChests()
     {
-        return null;
+        throw null;
     }
 
-    
+
     /// <summary>
     /// 检查箱子是否上锁
     /// </summary>
-    /// <param name="x">箱子的图格X坐标</param>
-    /// <param name="y">箱子的图格Y坐标</param>
+    /// <param name="x">箱子的图格X坐标(左上角)</param>
+    /// <param name="y">箱子的图格Y坐标(左上角)</param>
     /// <returns> true 箱子已上锁; false 箱子未上锁 </returns>
     public static bool IsLocked(int x, int y) => false;
 
     /// <summary>
     /// 检查箱子是否上锁
     /// </summary>
-    /// <param name="tile">箱子所在的图格</param>
+    /// <param name="t">箱子所在的图格(左上角)</param>
     /// <returns> true 箱子已上锁; false 箱子未上锁 </returns>
     public static bool IsLocked(ITile t)
     {
-
         return false;
     }
     
@@ -142,7 +141,7 @@ public class Chest : IFixLoadedData
     /// <returns> 毫无意义的Item,与传入的item一致 </returns>
     public static Item PutItemInNearbyChest(Item item, Vector2 position, int playerID)
     {
-        return null;
+        throw null;
     }
     
     /// <summary>
@@ -285,9 +284,9 @@ public class Chest : IFixLoadedData
     }
 
     /// <summary>
-    /// 向商店添加售卖物品 (貌似是出售物品后执行的)
+    /// 向商店添加售卖物品 (客户端使用，卖出物品后)
     /// </summary>
-    /// <param name="newItem">添加的物品/param>
+    /// <param name="newItem">添加的物品</param>
     public void AddItemToShop(Item newItem)
     {
     }
@@ -308,9 +307,7 @@ public class Chest : IFixLoadedData
     {
     }
     
-    /// <summary>
-    /// 修复已加载的数据(比如物品堆叠超最大堆叠)
-    /// </summary>
+    /// <inheritdoc cref="IFixLoadedData.FixLoadedData"/>
     public void FixLoadedData()
     {
     }

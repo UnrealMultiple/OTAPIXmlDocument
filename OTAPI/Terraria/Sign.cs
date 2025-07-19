@@ -59,6 +59,6 @@ public class Sign
     /// <returns>eg. x233    y233    Koko真可爱</returns>
     public override string ToString()
     {
-        return null;
+        throw null;
     }
 }

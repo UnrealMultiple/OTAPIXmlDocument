@@ -152,7 +152,7 @@ public class Item : Entity
     /// </summary>
     public bool material;
     /// <summary>
-    /// 使用后添加的buffID
+    /// 使用后添加的buffID<see cref="BuffID"/>
     /// </summary>
     public int buffType;
     /// <summary>
@@ -160,7 +160,7 @@ public class Item : Entity
     /// </summary>
     public int buffTime;
     /// <summary>
-    /// 使用后召唤的坐骑ID
+    /// 使用后召唤的坐骑ID<see cref="MountID"/>
     /// </summary>
     public int mountType;
     /// <summary>
@@ -203,6 +203,10 @@ public class Item : Entity
     /// 进入微光的时间
     /// </summary>
     public float shimmerTime;
+    /// <summary>
+    /// 染料ID
+    /// </summary>
+    public byte dye;
     /// <summary>
     /// 原始伤害(无前缀和其他加成)
     /// </summary>

@@ -51,4 +51,16 @@ public static class Utils
     {
         throw null;
     }
+    /// <summary>
+    /// 返回限制值
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="value"></param>
+    /// <param name="min"></param>
+    /// <param name="max"></param>
+    /// <returns>如果 <paramref name="min"/> &lt; <paramref name="value"/> &lt; <paramref name="max"/>，返回<paramref name="value"/>，否则返回<paramref name="min"/>或<paramref name="max"/></returns>
+    public static T Clamp<T>(T value, T min, T max) where T : IComparable<T>
+    {
+        throw null;
+    }
 }
