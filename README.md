@@ -10,3 +10,6 @@
 2. 运行脚本  
    ![image](https://github.com/user-attachments/assets/03997492-7c6c-4b8f-ab84-1b04e3182aff)
 
+> [!IMPORTANT]
+> 请在文件目录打开PowerShell，并使用`./install.ps1`执行脚本  
+> 直接右键运行可能会被系统拦截 !!!
