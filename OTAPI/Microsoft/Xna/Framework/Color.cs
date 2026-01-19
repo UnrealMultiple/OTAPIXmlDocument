@@ -2,7 +2,7 @@ using System;
 
 namespace Microsoft.Xna.Framework;
 /// <summary>
-/// ÑÕÉ«
+/// é¢œè‰²
 /// </summary>
 public struct Color
 {
