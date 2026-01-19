@@ -3,13 +3,13 @@ using System;
 namespace Terraria.Utilities;
 
 /// <summary>
-/// ¾É´úÂë±ê¼Ç
+/// æ—§ä»£ç æ ‡è®°
 /// </summary>
 [AttributeUsage(AttributeTargets.All)]
 public sealed class OldAttribute : Attribute
 {
 	/// <summary>
-	/// ÏûÏ¢
+	/// æ¶ˆæ¯
 	/// </summary>
 	public string Message
 	{
