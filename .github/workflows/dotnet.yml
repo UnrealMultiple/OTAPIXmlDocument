@@ -24,6 +24,8 @@ jobs:
         dotnet build OTAPIXmlDocument.sln -c Release
         ota_content=$(cat OTAPI/OTAPI.xml)
         powershell_script=$(cat <<EOL
+        [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+        \$OutputEncoding = [System.Text.Encoding]::UTF8
         \$OTA = @"
         $ota_content
         "@
@@ -37,7 +39,7 @@ jobs:
                 \$xmlPath = Join-Path -Path \$targetDir -ChildPath "OTAPI.xml"
                 
                 New-Item -Path \$xmlPath -ItemType "file" -Force | Out-Null
-                Set-Content -Path \$xmlPath -Value \$OTA
+                Set-Content -Path \$xmlPath -Value \$OTA -Encoding UTF8
                 
                 Write-Host "已创建 OTAPI.xml 在: \$xmlPath"
             }
