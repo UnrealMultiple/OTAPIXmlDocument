@@ -7,8 +7,11 @@
 ## 安装
 1. 下载安装脚本,在下载脚本最新发行版 [Release](https://github.com/UnrealMultiple/OTAPIXmlDocument/releases/latest)  
    ![image](https://github.com/user-attachments/assets/f960f3df-9c76-4563-bb88-5e84edd37b90)
-2. 运行脚本  
-   ![image](https://github.com/user-attachments/assets/03997492-7c6c-4b8f-ab84-1b04e3182aff)
+2. 打开`PowerShell`运行脚本
+    ```powershell
+    Get-Content ".\install.ps1" -Encoding UTF8 -Raw | Invoke-Expression
+    ```
+    ![image](https://github.com/user-attachments/assets/03997492-7c6c-4b8f-ab84-1b04e3182aff)
 
 > [!IMPORTANT]
 > 请在文件目录打开PowerShell，并使用`./install.ps1`执行脚本  
