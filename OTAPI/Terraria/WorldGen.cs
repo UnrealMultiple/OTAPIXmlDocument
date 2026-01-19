@@ -291,7 +291,7 @@ public class WorldGen
 
     /// <summary>
     /// 尝试破坏提供图格坐标处的图格。<para/>
-    /// 调用者可以使用 <paramref name="fail"/>、<paramref name="effectOnly"/> 和 <paramref name="noItem"/> 来指示意图是不真正杀死图格、仅生成破坏图格特效，还是不掉落物品。例如，蠕虫通常使用 <c>fail: true, effectOnly: true</c> 来生成表示蠕虫在地下挖掘的粉尘。<para/>
+    /// 调用者可以使用 <paramref name="fail"/>、<paramref name="effectOnly"/> 和 <paramref name="noItem"/> 来指示意图是不真正破坏图格、仅生成破坏图格特效，还是不掉落物品。例如，蠕虫通常使用 <c>fail: true, effectOnly: true</c> 来生成表示蠕虫在地下挖掘的粉尘。<para/>
     /// <see cref="ModTile.KillTile(int, int, ref bool, ref bool, ref bool)"/> 和 <see cref="GlobalTile.KillTile(int, int, int, ref bool, ref bool, ref bool)"/> 将被调用以修改这些值。<para/>
     /// 注意此方法将破坏单个图格，然后调用图格帧处理(framing)代码。<paramref name="noItem"/> 参数仅对 1x1 图格相关，对多体图格不相关。图格帧处理代码是触发多体图格破坏其所有剩余图格并掉落其放置物品的原因。如果意图是防止多体图格掉落物品，调用者必须使用 <see cref="GlobalTile.Drop(int, int, int)"/>。<para/>
     /// </summary>
